@@ -22,7 +22,6 @@ class KmlCoordinatesExtractor
   end
 
   def self.coordinates_mapper(file_path)
-    binding.pry
     doc = File.open(file_path) { |f| Nokogiri::XML(f) }
     coordinates = doc.css('coordinates').text
     coordinate_strings = coordinates.strip.split(/\s+/)
